@@ -1,0 +1,58 @@
+%div.midnav
+  %nav.nav.navbar.navbar-expand-sm.bg-light.navbar-light
+    %ul.navbar-nav
+      %li.nav-item
+        .dropdown
+          %a#navbardrop.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %strong 
+              Category
+              %span.caret
+          %ul.dropdown-menu
+            %li
+              %a.dropdown-item
+                = link_to "Entrees", {:controller => "static_pages", :action => "home", :type => 'Entrees' }
+            %li
+              %a.dropdown-item
+                = link_to "Salads", {:controller => "static_pages", :action => "home", :type => 'Salads' }
+            %li
+              %a.dropdown-item
+                = link_to "Second Courses", {:controller => "static_pages", :action => "home", :type => 'Second Courses' }
+            %li
+              %a.dropdown-item
+                = link_to "Show Menu", root_path
+      %li.nav-item
+        .dropdown
+          %a#navbardrop.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %strong 
+              Sorting
+              %span.caret
+          %ul.dropdown-menu
+            %li
+              %a.dropdown-item
+              = link_to "Ascending", {:controller => "static_pages", :action => "home", :sort_type => 'Ascending' }
+            %li
+              %a.dropdown-item
+              = link_to "Descending", {:controller => "static_pages", :action => "home", :sort_type => 'Descending' }
+      %li.nav-item
+        .dropdown
+          %a#navbardrop.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %strong 
+              Vegetarian
+              %span.caret
+          %ul.dropdown-menu
+            %li
+              %a.dropdown-item
+                =link_to "Vegetarian Food", {:controller => "static_pages", :action => "home" , :veg_type =>true  }
+            %li
+              %a.dropdown-item                
+                = link_to "Show Menu", root_path
+
+    %ul
+      %span#slider-price
+        %p
+          Price
+          %span.rangeValues
+        %section.range-slider
+          %span.rangeValues
+          %input.button-slider-1{:max => "150", :min => "0", :type => "range", :value => "50"}
+          %input.button-slider-2{:max => "150", :min => "0", :type => "range", :value => "10"}

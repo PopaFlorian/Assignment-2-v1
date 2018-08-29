@@ -1,0 +1,20 @@
+= form_for @product do |f|
+    Product name: 
+    %br
+    = f.text_area :title
+    %br
+    Category:
+    %br
+    = f.text_area :description
+    %br
+    Price: 
+    %br
+    = f.text_area :price
+    %br
+    = f.file_field :avatar
+    %br 
+    Vegetarian:
+    %br
+    = f.check_box :vegetarian , {}, true, false
+    %br
+    = f.submit "Create"

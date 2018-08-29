@@ -1,0 +1,28 @@
+%nav.nav.navbar.navbar-expand-sm.justify-content-end.navtop.top
+  %a#nav-img.nav-item
+    %img{:height => "60", :src => "assets/coffe.png", :width => "60"}
+    %strong Eureka Caffe
+  %ul.navbar-nav{:style => "float:right"}
+    %li.nav-item
+      %a.nav-link
+        =link_to"Home" , root_path
+        %span{:style => "color:orangered"}
+          &middot 
+    %li.nav-item
+      %a.nav-link
+        =link_to"About", about_path
+        %span{:style => "color:orangered"} 
+          &middot
+    %li.nav-item
+      %a.nav-link
+        =link_to"Service", service_path
+        %span{:style => "color:orangered"}
+          &middot 
+    %li.nav-item
+      %a.nav-link
+        =link_to"Blog", blog_path
+        %span{:style => "color:orangered"} 
+          &middot
+    %li.nav-item
+      %a.nav-link
+        =link_to"Contacts", contacts_path

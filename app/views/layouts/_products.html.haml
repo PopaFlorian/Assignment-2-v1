@@ -1,0 +1,17 @@
+.container.pt-5
+    .row
+        - @products.each do |p|
+            .col-md-3
+                %p.menu-image-wrapper
+                    -if p.avatar.attached?
+                        =image_tag(p.avatar)
+                .item-details.text-center
+                    %h4
+                        %strong
+                            =p.title
+                    %h6.type        
+                        =p.description
+                    %h6.price
+                        $
+                        =p.price   
+                

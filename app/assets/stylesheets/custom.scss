@@ -1,0 +1,194 @@
+@import "bootstrap";
+
+body{
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+// /*Clases
+
+.jumbotron{
+    background: transparent; 
+    margin-bottom: 0px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    
+}  
+
+.jumbotron-top{
+  color: white;
+  background-image: url('top.jpg') ;
+  //background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  p{
+   margin-top: 0px;
+   margin-bottom: 0px;
+  }
+}
+
+.jumbotron-home {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.top{
+    padding: 1.25rem;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    margin-right: 50px;
+    a{
+      
+      color: white;
+    }
+     li{
+        display: inline-block;
+        font-size: 1.7rem;
+     }
+    
+}
+
+.midnav{
+  padding-top: 10px;
+  padding-bottom: 40px;
+  background-color:whitesmoke;
+  padding-left: 50px;
+  a{
+    color: gray;
+  }
+   li{
+      display: inline-block;
+      font-size: 1.7rem;
+   } 
+   
+
+  .dropdown {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+}
+.caret {
+  color: orangered;
+}
+
+.price {
+  color: orangered;
+  font-display: inline-block;
+}
+
+.type {
+  color: grey;
+}
+
+.menu-image-wrapper {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  transition: transform .3s;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px black;
+    z-index: 7;
+  }
+  img {
+    min-width: 100%;
+    height: 100%;
+    width: auto;
+  }
+}
+
+#nav-img{
+    filter: invert(100%);
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    color: black;
+}
+
+// Slider
+section.range-slider {
+    float: right;
+    text-align: center;
+    input {
+      &[type="range"] {
+        pointer-events: none;
+        position: absolute;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 14px;
+        background: #f1efef;
+        box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+        -webkit-box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+        overflow: hidden;
+        right: 0;
+        width: 300px;
+        outline: none;
+        height: 20px;
+        float: right;
+        &::-webkit-slider-thumb {
+          pointer-events: all;
+          position: relative;
+          z-index: 1;
+          outline: 0;
+          -webkit-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: none;
+          border-radius: 14px;
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dad8da), color-stop(100%, #413f41));
+          /* android <= 2.2 */
+          background-image: -webkit-linear-gradient(top, #dad8da 0, #413f41 100%);
+          /* older mobile safari and android > 2.2 */
+          background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
+          /* W3C */
+        }
+        &::-moz-range-thumb {
+          pointer-events: all;
+          position: relative;
+          z-index: 10;
+          -moz-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: none;
+          border-radius: 14px;
+          background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
+          /* W3C */
+        }
+        &::-ms-thumb {
+          pointer-events: all;
+          position: relative;
+          z-index: 10;
+          -ms-appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 14px;
+          border: 0;
+          background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
+          /* W3C */
+        }
+      }
+      &[type=range] {
+        &::-moz-range-track {
+          position: relative;
+          z-index: -1;
+          background-color: rgba(0, 0, 0, 1);
+          border: 0;
+        }
+        &:last-of-type::-moz-range-track {
+          -moz-appearance: none;
+          background: none transparent;
+          border: 0;
+        }
+        &::-moz-focus-outer {
+          border: 0;
+        }
+      }
+    }
+  }
+  
+#slider-price {
+  display: inline;
+  float: right;
+}
