@@ -15,8 +15,6 @@ function getVals(){
     var displayElement = parent.getElementsByClassName("rangeValues")[0];
     displayElement.innerHTML = "$ " + slide1 + " - $" + slide2 ;
     // sortSlider(slide1,slide2);
-    console.log(slide1,slide2);
-    
 
     $.ajax({
         method: "POST",
