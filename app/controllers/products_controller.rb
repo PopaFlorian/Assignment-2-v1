@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController 
     def index
-    
+        @products= Product.all
+        @order_item = current_order.order_items.new
     end
 
     def new
@@ -18,24 +19,10 @@ class ProductsController < ApplicationController
 
     end
 
-    def show
-
-    end
+    def show; end
 
     private 
         def product_params
             params.require(:product).permit(:title, :description, :price, :vegetarian)
         end
-    # def update
-    #     @user = User.find(params[:id])
-    #     avatar = params[:user][:avatar]
-    #     if @user.update(user_params)
-    #         if avatar
-    #         @user.avatar.attach(avatar)
-    #         end
-    #         redirect_to @user, notice: "Your profile has been updated"
-    #     else
-    #         render 'edit'
-    #     end
-    #     end
 end

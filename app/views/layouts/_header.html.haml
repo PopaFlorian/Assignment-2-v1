@@ -26,3 +26,24 @@
     %li.nav-item
       %a.nav-link
         =link_to"Contacts", contacts_path
+        %span{:style => "color:orangered"} 
+          &middot
+    %li.nav-item
+      %a.nav-link
+        - if logged_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Account
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Users", users_path
+              %li= link_to "Profile", current_user
+              %li= link_to "Settings", edit_user_path(current_user)
+              %li= render "carts/cart_link"
+              %li.divider
+              %li= link_to "Log out", logout_path, method: :delete
+              
+        - else
+          %li= link_to "Log in", login_path
+
+        

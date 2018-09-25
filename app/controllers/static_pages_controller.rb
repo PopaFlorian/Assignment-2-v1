@@ -1,13 +1,16 @@
 class StaticPagesController < ApplicationController
+  def index
+    @products = Product.all
+  end
      
   def home
-    @products = Product.all
+    
     if !params[:type].nil?
       @products = Product.filtered(params[:type])
     elsif params[:sort_type] == "Ascending"
-      @products = @products.order(price: :asc )
+      @products = Product.all.sort{|a,b| return a<=>b}
     elsif params[:sort_type] == "Descending"
-      @products = @products.order(price: :desc )
+      @products = @products.order(price: :desc)
     elsif !params[:veg_type].nil?
       @products = Product.vegetarian
     else
@@ -15,11 +18,9 @@ class StaticPagesController < ApplicationController
     end  
   end
 
-  def contacts
-  end
+  def contacts; end
   
-  def about
-  end
+  def about; end
 
   def filter_price
     if !params.nil?
@@ -30,7 +31,5 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def help
-  end
-  
+  def help; end
 end

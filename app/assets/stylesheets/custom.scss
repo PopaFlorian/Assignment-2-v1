@@ -2,21 +2,13 @@
 
 body{
     background-color: white;
-    font-family: 'Raleway', sans-serif;
-    
+    font-family: 'Raleway', sans-serif;   
 }
 
-// /*Clases
-
-.jumbotron{
-    background: transparent; 
-    margin-bottom: 0px;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    
-}  
-
 .jumbotron-top{
+  background: transparent; 
+  margin-bottom: 0px;
+  padding-bottom: 150px;   
   color: white;
   background-image: url('top.jpg') ;
   //background-position: center;
@@ -28,18 +20,12 @@ body{
   }
 }
 
-.jumbotron-home {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 .top{
     padding: 1.25rem;
     padding-right: .5rem;
     padding-left: .5rem;
     margin-right: 50px;
-    a{
-      
+    a{ 
       color: white;
     }
      li{
@@ -47,6 +33,15 @@ body{
         font-size: 1.7rem;
      }
     
+}
+
+.dropdown-toggle{
+  background-color: transparent !important;
+}
+
+.dropdown-menu{
+  background-color: transparent !important;
+  color: white;
 }
 
 .midnav{
@@ -61,8 +56,6 @@ body{
       display: inline-block;
       font-size: 1.7rem;
    } 
-   
-
   .dropdown {
     padding-right: .5rem;
     padding-left: .5rem;
@@ -138,11 +131,8 @@ section.range-slider {
           border: none;
           border-radius: 14px;
           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dad8da), color-stop(100%, #413f41));
-          /* android <= 2.2 */
           background-image: -webkit-linear-gradient(top, #dad8da 0, #413f41 100%);
-          /* older mobile safari and android > 2.2 */
           background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
-          /* W3C */
         }
         &::-moz-range-thumb {
           pointer-events: all;
@@ -154,7 +144,6 @@ section.range-slider {
           border: none;
           border-radius: 14px;
           background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
-          /* W3C */
         }
         &::-ms-thumb {
           pointer-events: all;
@@ -166,7 +155,6 @@ section.range-slider {
           border-radius: 14px;
           border: 0;
           background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
-          /* W3C */
         }
       }
       &[type=range] {
@@ -191,4 +179,102 @@ section.range-slider {
 #slider-price {
   display: inline;
   float: right;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* sidebar */
+
+aside {rails 
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 0px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.btncart {
+  margin: auto;
+  display: block;
 }
