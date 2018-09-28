@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get '/blog', to: 'static_pages#blog'
   get '/service', to: 'static_pages#service'
   get '/new', to: 'products#new'
-  get '/show', to: 'products#show'
   post '/filter_price', to: 'static_pages#filter_price', :format => false
   get 'filter_price', to: 'static_pages#filter_price'
   get  '/signup',  to: 'users#new'
@@ -20,13 +19,14 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get '/myorder', to: 'carts#myorder'
+  get '/carts', to: 'carts#show'
+  get '/orders', to: 'carts#index'
 
   resources :products
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :cart, only: [:show]
+  resources :carts
   resources :order_items, only: [:create, :update, :destroy]
 
 end

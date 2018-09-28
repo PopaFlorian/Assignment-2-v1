@@ -1,0 +1,12 @@
+- if !@order_items.size.zero?
+  = render partial: 'carts/order_item', collection: @order_items
+  .container.text-right
+    %p Shipping: $ #{current_order.shipping}
+    %p Total price: $ #{current_order.total}
+    = link_to "Place Order",orders_path ,class: 'btn btn-primary btncart' 
+
+-else
+  %h3.text-center
+    %i.fas.fa-shopping-cart is empty
+  .text-center
+    = link_to "Buy now", root_path, class: 'btn btn-primary btncart'

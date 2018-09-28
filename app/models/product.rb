@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+    has_many :order_items
     has_one_attached :avatar
 
     scope :filtered, -> (filter_param) { where(:description => filter_param)}
