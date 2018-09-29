@@ -1,0 +1,27 @@
+.container.pt-5
+	.row
+		- @products.each do |p|
+			.col-md-3
+				%p.menu-image-wrapper
+					- if p.avatar.attached?
+						=image_tag(p.avatar)
+				.item-details.text-center
+					%h4
+						%strong
+							=p.title
+					%h6.type        
+						=p.description
+					%h6.price
+						="$#{p.price}"   
+					-# - if logged_in? 
+					-# 	.col-xs-4
+					-# 		= form_for(@order_items, remote: true) do |f|
+					-# 			%h4.text-right
+					-# 				Unit Price:
+					-# 				%span{:style => "color: green"}= number_to_currency product.price
+					-# 			.input-group
+					-# 				= f.number_field :quantity, value: 1, class: "form-control", min: 1
+					-# 				.input-group-btn
+					-# 					= f.hidden_field :product_id, value: product.id
+					-# 					= f.submit "Add to Cart", class: "btn btn-primary"
+
