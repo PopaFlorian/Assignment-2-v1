@@ -3,16 +3,16 @@ class OrderItem < ApplicationRecord
   belongs_to :order 
 
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :product_present
-  validates :order_present
+  # validates :product_present
+  # validates :order_present
 
   before_save :finalize
 
   def unit_price
-    if persised?
+    if persisted?
       self[:unit_price]
     else
-      product.unit_price
+      product.price
     end
   end
 
@@ -34,10 +34,9 @@ class OrderItem < ApplicationRecord
     end
   end
   
-  def
-    finalize
-    sef[:unit_price] = unit_price
-    sef[:total_price] = quantity * sef[:unit_price]
+  def finalize
+    self[:unit_price] = unit_price
+    self[:total_price] = quantity * self[:unit_price]
   end
 
 end

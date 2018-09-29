@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   end
      
   def home
+    @order_items = OrderItem.new
     
     if !params[:type].nil?
       @products = Product.filtered(params[:type])

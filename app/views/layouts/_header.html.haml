@@ -39,7 +39,7 @@
               %li= link_to "Users", users_path
               %li= link_to "Profile", current_user
               %li= link_to "Settings", edit_user_path(current_user)
-              %li= render "carts/cart_link"
+              %li.cart-text= render "carts/cart_link"
               %li.divider
               %li= link_to "Log out", logout_path, method: :delete
               
