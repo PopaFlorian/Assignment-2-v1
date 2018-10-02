@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+
   def index
     @orders = Order.all
   end
@@ -11,9 +12,18 @@ class CartsController < ApplicationController
   def myorder
   end
 
+  def place_order
+    if current_order.sent == true
+      flash[:success] = "Order complete"
+      # current_order.save!
+      # session[:order_id] = nil   
+    end
+  end
+
   def create
-    @order = current_order.order_items
+    @order = current_order
     @order.update(sent:true)
-    redirect_to carts_path if @order.save
+    flash[:success] = "Order complete"
+    redirect_to orders_path if @order.save
   end
 end

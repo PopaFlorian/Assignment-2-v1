@@ -1,9 +1,11 @@
 - if !@order_items.size.zero?
+  %h1.text-center
+    Cart items
   = render partial: 'carts/order_item', collection: @order_items
   .container.text-right
     %p Shipping: $ #{current_order.shipping}
     %p Total price: $ #{current_order.total}
-    = link_to "Place Order",orders_path ,class: 'btn btn-primary btncart' 
+    = link_to "Place Order",  {:controller => "carts", :action => "place_order" , :sent => "true"  } 
 
 -else
   %h3.text-center

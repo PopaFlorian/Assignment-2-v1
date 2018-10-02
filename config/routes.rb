@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/carts', to: 'carts#show'
   get '/orders', to: 'carts#index'
+  get '/finish_order', to: 'carts#place_order'
 
   resources :products
   resources :users

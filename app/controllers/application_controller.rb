@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
       session[:order_id] = @o.id
       return @o
     end
+
   end
 
   private

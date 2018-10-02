@@ -12,7 +12,7 @@ gem 'bcrypt',         '3.1.12'
 gem 'bootstrap-sass', '3.3.7'
 gem 'font-awesome-sass', '~> 5.2.0'
 
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'activestorage','~> 5.2.0'
 gem 'jquery-rails'
 gem "js-routes"
