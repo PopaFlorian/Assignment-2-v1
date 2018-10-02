@@ -5,7 +5,6 @@ class StaticPagesController < ApplicationController
      
   def home
     @order_items = OrderItem.new
-    
     if !params[:type].nil?
       @products = Product.filtered(params[:type])
     elsif params[:sort_type] == "Ascending"

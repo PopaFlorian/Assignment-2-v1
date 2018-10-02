@@ -9,8 +9,7 @@ class CartsController < ApplicationController
     @products = Product.all
   end
   
-  def myorder
-  end
+  def myorder; end
 
   def place_order
     if current_order.sent == true
