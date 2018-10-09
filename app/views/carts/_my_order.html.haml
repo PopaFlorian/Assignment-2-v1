@@ -1,4 +1,4 @@
-- if !@order_items.size.zero?
+- if @order_items.size.positive?
   %h1.text-center
     Cart items
   = render partial: 'carts/order_item', collection: @order_items
@@ -7,7 +7,7 @@
     %p Total price: $ #{current_order.total}
     = link_to "Place Order",  {:controller => "carts", :action => "place_order" , :sent => "true"  } 
 
--else
+- else
   %h3.text-center
     %i.fas.fa-shopping-cart is empty
   .text-center

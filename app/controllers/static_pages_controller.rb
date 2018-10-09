@@ -1,30 +1,41 @@
+# Static pages controller
 class StaticPagesController < ApplicationController
   def index
     @products = Product.all
   end
-     
+
   def home
     @order_items = OrderItem.new
-    if !params[:type].nil?
-      @products = Product.filtered(params[:type])
-    elsif params[:sort_type] == "Ascending"
-      @products = Product.all.sort{|a,b| return a<=>b}
-    elsif params[:sort_type] == "Descending"
-      @products = @products.order(price: :desc)
-    elsif !params[:veg_type].nil?
-      @products = Product.vegetarian
-    else
-      @products = Product.all
-    end  
+    @products = if params[:type].present?
+                  Product.filtered(params[:type])
+                elsif sort_asc(:sort_type)
+                elsif sort_desc(:sort_type)
+                elsif !params[:veg_type].nil?
+                  Product.vegetarian
+                else
+                  Product.all
+                end
   end
 
   def contacts; end
-  
+
   def about; end
 
+  def sort_asc
+    @products.order(price: :asc) if params[:sort_type] == 'Ascending'
+  end
+
+  def sort_desc
+    @products.order(price: :desc) if params[:sort_type] == 'Descending'
+  end
+
   def filter_price
-    if !params.nil?
-      @products = Product.filter_price(params[:slide1].to_i,params[:slide2].to_i)
+    if params.nil?
+      flash[:danger] = 'Slide Error'
+    else
+      slide1 = params[:slide1].to_i
+      slide2 = params[:slide2].to_i
+      @products = Product.filter_price(slide1, slide2)
       respond_to do |format|
         format.js
       end

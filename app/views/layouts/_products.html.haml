@@ -1,7 +1,7 @@
 .container.pt-5
 	.row
 		- @products.each do |p|
-			.col-md-3{:style =>"padding-top: 15px"}
+			.col-md-3.product-item
 				%p.menu-image-wrapper
 					- if p.avatar.attached?
 						=image_tag(p.avatar)
@@ -12,7 +12,7 @@
 					%h6.type        
 						=p.description
 					%h6.price
-						="$#{p.price}"   
+  					="$#{p.price}"   
 					- if logged_in? 
 						.col-xs-6
 							= form_for(@order_items, remote: true) do |f|
