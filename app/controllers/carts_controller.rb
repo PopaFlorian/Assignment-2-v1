@@ -14,8 +14,8 @@ class CartsController < ApplicationController
   def place_order
     if current_order.sent
       flash[:success] = 'Order complete'
-      # current_order.save!
-      # session[:order_id] = nil
+      current_order.save!
+      session[:order_id].destroy
     else
       flash[:danger] = "Order can't be place"
     end

@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
                   Product.filtered(params[:type])
                 elsif sort_asc(:sort_type)
                 elsif sort_desc(:sort_type)
-                elsif !params[:veg_type].nil?
+                elsif params[:veg_type].present?
                   Product.vegetarian
                 else
                   Product.all
@@ -21,11 +21,11 @@ class StaticPagesController < ApplicationController
 
   def about; end
 
-  def sort_asc
+  def sort_asc(sort_type)
     @products.order(price: :asc) if params[:sort_type] == 'Ascending'
   end
 
-  def sort_desc
+  def sort_desc(sort_type)
     @products.order(price: :desc) if params[:sort_type] == 'Descending'
   end
 
