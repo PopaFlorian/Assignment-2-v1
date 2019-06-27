@@ -4,16 +4,14 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %title= full_title(yield(:title))
-    %link{:href => "assets/images.png", :rel => "shortcut icon"}
+    %link{:href => "/assets/ico.png", :rel => "icon", :type => "image/png"}/
     = csrf_meta_tags
+    = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %div.jumbotron-top.responsive
-      = render 'layouts/header'
-      = render 'layouts/texttop'
-    - flash.each do |message_type, message|
-      %div{:class => "alert alert-#{message_type}"}= message
+    = render 'layouts/header'
+    = render 'layouts/texttop'
     = yield
     =render 'layouts/footer'
     

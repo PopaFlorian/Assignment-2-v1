@@ -1,5 +1,7 @@
 # carts controller
 class CartsController < ApplicationController
+  include SessionsHelper
+  helper_method :current_order
   def index
     @orders = Order.all
   end
@@ -11,14 +13,8 @@ class CartsController < ApplicationController
 
   def myorder; end
 
-  def place_order
-    if current_order.sent
-      flash[:success] = 'Order complete'
-      current_order.save!
-      session[:order_id].destroy
-    else
-      flash[:danger] = "Order can't be place"
-    end
+  def placeOrder
+    create 
   end
 
   def create
@@ -28,9 +24,11 @@ class CartsController < ApplicationController
     if @order.save
       flash[:success] = 'Order complete'
       redirect_to orders_path
+      @order.destroy
     else
       flash[:errors] = 'Put error message here'
       render :edit
     end
   end
+  
 end

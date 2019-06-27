@@ -1,11 +1,11 @@
 - if @order_items.size.positive?
-  %h1.text-center
+  %h1.text-center.well
     Cart items
   = render partial: 'carts/order_item', collection: @order_items
   .container.text-right
     %p Shipping: $ #{current_order.shipping}
     %p Total price: $ #{current_order.total}
-    = link_to "Place Order",  {:controller => "carts", :action => "place_order" , :sent => "true"  } 
+    = link_to "Place Order", placeOrder_path
 
 - else
   %h3.text-center

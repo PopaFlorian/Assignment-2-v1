@@ -102,6 +102,7 @@ GEM
     js-routes (1.4.4)
       railties (>= 3.2)
       sprockets-rails
+    json (2.1.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.6.0)
@@ -170,6 +171,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    recaptcha (5.0.0)
+      json
     rubocop (0.59.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -257,6 +260,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.2.0)
   rails-controller-testing
+  recaptcha
   rubocop (~> 0.59.2)
   sass-rails (~> 5.0)
   selenium-webdriver

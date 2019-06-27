@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   get 'sessions/new'
   root 'static_pages#home'
+  get '/placeOrder', to: 'carts#placeOrder'
   get '/about', to: 'static_pages#about'
   get '/contacts', to: 'static_pages#contacts'
   get '/blog', to: 'static_pages#blog'
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/carts', to: 'carts#show'
   get '/orders', to: 'carts#index'
-  get '/finish_order', to: 'carts#place_order'
+
 
   resources :products
   resources :users

@@ -16,6 +16,7 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'jquery-rails'
 gem 'js-routes'
 gem 'rubocop', '~> 0.59.2', require: false
+gem "recaptcha", require: "recaptcha/rails"
 
 # Use postgres as the database for Active Record
 gem 'pg'

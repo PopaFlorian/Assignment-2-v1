@@ -3,3 +3,126 @@
 .product-item{
   padding-top: 15px;
 }
+
+
+.jumbotron {
+    background-image:url(asset-path('bnr.jpg'));
+    height:500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0%;
+    margin-bottom: 0em;
+  }
+
+  .col-sm-3 {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+    
+  
+  /*custom color for nav link*/
+  
+  a, .nav-link{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 12px;
+    &:hover {
+      color: orangered;
+      text-decoration: none
+    }
+  }
+  
+  
+  
+  h6 {
+    color: rgb(95, 95, 95);
+    font-weight: 100;
+  }
+  
+  .fa-angle-down {
+    color: orangered;
+    font-size: 14 px;
+  }
+  
+  .im-centered{
+    margin: auto; 
+    max-width: 200px;
+  }
+  
+  .logo{
+    background-image:url(asset-path('logo-o.png'));
+    background-size: cover;
+    float: left;
+    margin: 0 10px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .lg-txt {
+    line-height: 1.3rem;
+  }
+  
+  .jumb-title {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding-top: 0.2em;
+  }
+  
+  /*hide the orange dot*/
+  
+  @media (min-width: 768px){
+    .dot {
+      font-size: 15px;
+      color: orangered;
+      display: block;
+      padding: .3rem 1rem;
+      pointer-events:none;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .dot-hide{
+      display: none;
+    }
+    .jumbotron{
+      margin-bottom: 0px;
+    }
+  }
+  
+  .filter-bar {
+    position: relative;
+    background-color: rgb(224, 224, 224);
+    padding: 10px;
+    color: #000;
+    flex-direction: column;
+    margin-bottom: 3em;
+  }
+  
+  .price {
+    margin: 0.9em;
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+  }
+  
+  .dropdown-menu {
+    background-color:transparent !important;
+    border: none;
+    &:hover {
+      background:transparent !important;
+      color: #fff;
+    }
+  }
+  
+  .modal-body {
+    overflow-x: auto;
+  }
+
+  .orange-btn {
+    background: orangered;
+    border: 0;
+    &:hover {
+      background: orangered;
+    }
+  }
+

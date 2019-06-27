@@ -1,49 +1,102 @@
-%nav.nav.navbar.navbar-expand-sm.justify-content-end.navtop.top
-  %a#nav-img.nav-item
-    %img{:height => "60", :src => "assets/coffe.png", :width => "60"}
-    %strong Eureka Caffe
-  %ul.navbar-nav{:style => "float:right"}
-    %li.nav-item
-      %a.nav-link
-        =link_to"Home" , root_path
-        %span{:style => "color:orangered"}
-          &middot 
-    %li.nav-item
-      %a.nav-link
-        =link_to"About", about_path
-        %span{:style => "color:orangered"} 
-          &middot
-    %li.nav-item
-      %a.nav-link
-        =link_to"Service", service_path
-        %span{:style => "color:orangered"}
-          &middot 
-    %li.nav-item
-      %a.nav-link
-        =link_to"Blog", blog_path
-        %span{:style => "color:orangered"} 
-          &middot
-    %li.nav-item
-      %a.nav-link
-        =link_to"Contacts", contacts_path
-        %span{:style => "color:orangered"} 
-          &middot
-    %li.nav-item
-      %a.nav-link
-        - if logged_in?
-          %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Account
-              %b.caret
-            %ul.dropdown-menu
-              %li= link_to "Users", users_path
-              %li= link_to "Profile", current_user
-              %li= link_to "Settings", edit_user_path(current_user)
-              %li.cart-text= render "carts/cart_link"
-              %li.divider
-              %li= link_to "Log out", logout_path, method: :delete
-              
-        - else
-          %li= link_to "Log in", login_path
+.jumbotron
+  .container
+    %nav.nav.navbar.navbar-expand-sm.justify-content-end.navtop.top
+      %a#nav-img.nav-item
+        %img{:height => "60", :src => "assets/coffe.png", :width => "60"}
+        %strong Eureka Caffe
+      %ul.navbar-nav{:style => "float:right"}
+        %li.nav-item
+          %a.nav-link
+            =link_to"Home" , root_path
+            %span{:style => "color:orangered"}
+              &middot 
+        %li.nav-item
+          %a.nav-link
+            =link_to"About", about_path
+            %span{:style => "color:orangered"} 
+              &middot
+        %li.nav-item
+          %a.nav-link
+            =link_to"Service", service_path
+            %span{:style => "color:orangered"}
+              &middot 
+        %li.nav-item
+          %a.nav-link
+            =link_to"Blog", blog_path
+            %span{:style => "color:orangered"} 
+              &middot
+        %li.nav-item
+          %a.nav-link
+            =link_to"Contacts", contacts_path
+            %span{:style => "color:orangered"} 
+              &middot
+        %li.nav-item
+          %a.nav-link
+            - if logged_in?
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Account
+                  %b.caret
+                %ul.dropdown-menu
+                  %li= link_to "Users", users_path
+                  %li= link_to "Profile", current_user
+                  %li= link_to "Settings", edit_user_path(current_user)
+                  %li.cart-text= render "carts/cart_link"
+                  %li.divider
+                  %li= link_to "Log out", logout_path, method: :delete
+                  
+            - else
+              %li= link_to "Log in", login_path
+    .container{:align => "center"}
+      %h1.display-3.jumb-title{:style => "color:white"} Ordering food
+      .row.im-centered
+        .col-xs
+          %svg{:height => "5", :width => "90"}
+            %line{:style => "stroke:rgb(255, 145, 0);stroke-width:2", :x1 => "90"}
+        .col-xs
+          %i.fas.fa-utensils.jumb-title
+        .col-xs
+          %svg{:height => "5", :width => "90"}
+            %line{:style => "stroke:rgb(255, 145, 0);stroke-width:2", :x1 => "90"}
+      %p.jumb-title First we eat, then we do everything else.    
 
         
+
+-#     %nav.navbar.navbar-expand-md.navbar-dark.nav.top
+-#       %a.navbar-brand{:href => "/"}
+-#         .logo
+-#         %p.lg-txt EurekaCaffe
+-#       %button.navbar-toggler{"data-target" => "#navbar7", "data-toggle" => "collapse", :type => "button"}
+-#         %span.navbar-toggler-icon
+-#       #navbar7.navbar-collapse.collapse.justify-content-stretch
+-#         %ul.navbar-nav.ml-auto
+-#           %li.nav-item
+-#             = link_to "HOME",    root_path, class: "nav-link"
+-#           %li.dot-hide
+-#             %p.dot ▪
+-#           %li.nav-item
+-#             = link_to "ABOUT",    about_path, class: "nav-link"
+-#           %li.dot-hide
+-#             %p.dot ▪
+-#           %li.nav-item
+-#             = link_to "SERVICE",    service_path, class: "nav-link"
+-#           %li.dot-hide
+-#             %p.dot ▪
+-#           %li.nav-item
+-#             = link_to "BLOG",    blog_path, class: "nav-link"
+-#           %li.dot-hide
+-#             %p.dot ▪
+-#           %li.nav-item
+-#             = link_to "CONTACT",    contacts_path, class: "nav-link"
+-#   .container
+-#     %h1.display-3.jumb-title Ordering food
+-#     .row.im-centered
+-#       .col-xs
+-#         %svg{:height => "5", :width => "90"}
+-#           %line{:style => "stroke:rgb(255, 145, 0);stroke-width:2", :x1 => "90"}
+-#       .col-xs
+-#         %i.fas.fa-utensils.jumb-title
+-#       .col-xs
+-#         %svg{:height => "5", :width => "90"}
+-#           %line{:style => "stroke:rgb(255, 145, 0);stroke-width:2", :x1 => "90"}
+-#     %p.jumb-title First we eat, then we do everything else.
