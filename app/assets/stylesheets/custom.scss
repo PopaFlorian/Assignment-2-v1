@@ -35,14 +35,14 @@ body{
     
 }
 
-.dropdown-toggle{
-  background-color: transparent !important;
-}
+// .dropdown-toggle{
+//   background-color: transparent !important;
+// }
 
-.dropdown-menu{
-  background-color: transparent !important;
-  color: white;
-}
+// .dropdown-menu{
+//   background-color: transparent !important;
+//   color: white;
+// }
 
 .midnav{
   padding-top: 10px;
@@ -74,7 +74,13 @@ body{
   color: grey;
 }
 
+.item-details{
+  padding-top:10px;
+}
+
 .menu-image-wrapper {
+  padding-top: 55px;
+  padding-bottom: 55px;
   height: 300px;
   width: 100%;
   overflow: hidden;
@@ -176,7 +182,16 @@ section.range-slider {
     }
   }
   
+ .slider-min-value {
+    margin-right: 100px;
+ } 
+
+ .slider-max-value {
+  margin-right: 100px;
+} 
+
 #slider-price {
+  margin-right: 100px;
   display: inline;
   float: right;
 }

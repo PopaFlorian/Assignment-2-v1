@@ -1,5 +1,4 @@
 class UserMailerPreview < ActionMailer::Preview
-
   def account_activation
     user = User.first
     user.activation_token = User.new_token
